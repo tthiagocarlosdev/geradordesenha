@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de senha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Gerador de senha</h1>
+    </header>
+    <section>
+        <div>
+            <p>
+                Digite a quantidade de caracteres de sua senha:
+            </p>
+            <p>
+                <input type="number" name="quantidadeCaracteres" id="quantidadeCaracteres">
+                <input type="button" value="Gerar" onclick="gerarSenha()">
+            </p>
+            <p>[ATENÇÃO!] Digite valores entre 6 e 93!</p>
+        </div>
+        <div id="resposta">
+
+        </div>
+    </section>
+    <footer>
+        <p>Site desenvolvido por Thiago Carlos!</p>
+        <p>
+            Minhas redes:
+                <a href="https://www.instagram.com/tthiagocarlos.dev/" target="_blank">Instagram</a>, 
+                <a href="https://www.youtube.com/channel/UCZN-uQtc4UDQt_tLu-I7Wpw" target="_blank">Youtube</a>, 
+                <a href="https://github.com/tthiagocarlosdev" target="_blank">GitHub</a>.
+            
+        </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
