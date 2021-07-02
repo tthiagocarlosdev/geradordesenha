@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Ascii</title>
+    <style>
+        body{
+            font: normal 20px verdana;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teste Ascii</h1>
+    <p>Testando o método "charAt()"</p>
+    <div id="paginaInicial">
+        <p>
+            Click no botão gerar um valor: 
+            <!--<input type="number" name="numero" id="numero">-->
+            <input type="button" value="Gerar" onclick="gerar()">
+        </p>
+    </div>
+    <div id="resultadoFinal">
+
+    </div>
+    <script>
+        function gerar(){
+            function getRandomIntInclusive(min, max){
+            min = Math.ceil(min)
+            max = Math.floor(max)
+            return Math.floor(Math.random() * (max - min + 1)) + min
+            }
+            //-----------------012345678901234567890123456
+            var codigoAscii = `!"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_abcdefghijklmnopqrstuvwxyz{|}~`
+            var resultadoFinal = document.querySelector('div#resultadoFinal')
+            var senhaEmNumero = []
+            //var number = Number(document.querySelector("input#numero").value)
+            for(let contador = 0; contador <= 7; contador++){
+                senhaEmNumero[contador] = getRandomIntInclusive(0, 92)
+            }
+            resultadoFinal.innerHTML += `<p>Números sorteados: `
+            for (let contador = 0; contador <= 7; contador++){
+                resultadoFinal.innerHTML += `${senhaEmNumero[contador]} - `
+            }
+            resultadoFinal.innerHTML += `<p>Sua senha: `
+            for (let contador = 0; contador <= 7; contador++){
+                resultadoFinal.innerHTML += `<strong>${codigoAscii.charAt(senhaEmNumero[contador])}</strong>`
+            }
+            //resultadoFinal.innerHTML = `<p>Número sorteado: ${number} corresponde ao caractere: <strong>${codigoAscii.charAt(number)}</strong></p>`
+
+        }
+        
+
+    </script>
+</body>
+</html>
