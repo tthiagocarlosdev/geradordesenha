@@ -1,41 +1,85 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de senha</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="https://iconape.com/wp-content/files/wp/258575/svg/258575.svg">
+		<link rel="stylesheet" href="style.css">
+		<title> password generator </title>
+	</head>
 <body>
-    <header>
-        <h1>Gerador de senha</h1>
-    </header>
-    <section>
-        <div>
-            <p>
-                Digite a quantidade de caracteres de sua senha:
-            </p>
-            <p>
-                <input type="number" name="quantidadeCaracteres" id="quantidadeCaracteres">
-                <input type="button" value="Gerar" onclick="gerarSenha()">
-            </p>
-            <p>[ATENÇÃO!] Digite valores entre 6 e 40!</p>
-        </div>
-        <div id="resposta">
+	<div class="container">
 
-        </div>
-    </section>
-    <footer>
-        <p>Site desenvolvido por Thiago Carlos!</p>
-        <p>
-            Minhas redes:
-                <a href="https://www.instagram.com/tthiagocarlos.dev/" target="_blank">Instagram</a>, 
-                <a href="https://www.youtube.com/channel/UCZN-uQtc4UDQt_tLu-I7Wpw" target="_blank">Youtube</a>, 
-                <a href="https://github.com/tthiagocarlosdev" target="_blank">GitHub</a>.
-            
-        </p>
-    </footer>
-    <script src="script.js"></script>
+		<header class="header">
+			<h1> GERADOR DE SENHA </h1>
+		</header>
+
+		<div class="sub-titles">
+			<h2 id="title-instructions"> Instruções </h2>
+			<h2 id="title-generator">Gerar Senha</h2>
+		</div>
+
+		<main class="main">
+			<div class="box-instructions">
+				<p> Este sistema foi desenvolvido para gerar senhas seguras.</p>
+				<p> Para uma senha ser considerada segura, ela deve apresentar: </p>
+				<ul>
+					<li> <i class="fa-solid fa-key"></i> Mínimo de 8 caracteres; </li>
+					<li> <i class="fa-solid fa-key"></i> Letras maiúsculas; </li>
+					<li> <i class="fa-solid fa-key"></i> Letras minusculas; </li>
+					<li> <i class="fa-solid fa-key"></i> Números; </li>
+					<li> <i class="fa-solid fa-key"></i> Símbolos. </li>
+				</ul>
+			</div>
+
+			<div class="box-input-generator">
+				<p> Digite a quantidade de caracteres de sua senha: </p>
+				<p> [ATENÇÃO]! Digite valores de 8 a 40.</p>
+				<input type="number" name="number-of-characters" id="number_of_characters_typed" placeholder="Digite aqui">
+				<button value="generate" onclick="passwordGenerator()"> Gerar senha </button>
+			</div>
+
+		</main>
+
+		<footer class="box-footer">
+			<p class="footer-title"> Desenvolvido por tthiagocarlosdev <p>
+			<ul class="links-social-media">
+				<li> <a href="https://github.com/tthiagocarlosdev" target="_blank"> GitHub </a></li>
+				<li> <a href="mailto:tthiagocarlos.dev@gmail.com" target="_blank"> Gmail </a></li>
+				<li> <a href="https://www.youtube.com/channel/UCZN-uQtc4UDQt_tLu-I7Wpw" target="_blank"> YouTube </a></li>
+				<li> <a href="https://www.instagram.com/tthiagocarlos.dev/" target="_blank"> Instagram </a></li>
+				<li> <a href="https://www.linkedin.com/in/thiago-carlos-80a480244" target="_blank"> LinkedIn </a></li>
+			</ul>
+		</footer>
+
+		<div class="modal-password">
+			<div class="box-modal-password">
+				<div class="header-modal">
+					<h1 class="title-modal-password"> Senha Gerada </h1>
+					<button class="botton-close-modal" onclick="closeModalPassword()" > X </button>
+				</div>
+
+				<div class="text-modal-password">
+					<p> Sua senha tem <span id="number_of_characters_modal"></span> caracteres, sendo: </p>
+					<ul>
+						<li> <span id="symbols_modal"></span> símbolos;</li>
+						<li> <span id="numbers_modal"></span> números;</li>
+						<li> <span id="capital_letters_modal"></span> letras maiúsculas;</li>
+						<li> <span id="small_letters_modal"></span> letras minúsculas.</li>
+					</ul>
+					<div class="result-password">
+						<p>Sua senha é:</p>	
+						<button id="copy-password-button" onclick="copyToClipboard()"> <i class="fa-regular fa-copy"></i> </button>	
+					</div>
+					<p id="password_modal" > {'0137z$\PyaW`2bQldL.4M!6t5UGCVi8c9?p*rN </p>
+				
+				</div>
+				
+			</div>
+		
+		</div>
+
+	</div>
+	<script src="scripts.js"></script>
+	<script src="https://kit.fontawesome.com/bec2f6bc88.js" crossorigin="anonymous"></script>
 </body>
 </html>
